@@ -8,9 +8,13 @@ drawJuliaSet call in julia Mainto any numbers between -1 and 1! the first number
 
 
 
+
+
 -0.8 + 0.156i
 
 <img width="569" alt="- 8, 156" src="https://github.com/averystraumann/generative-art/assets/101287035/37842d9b-995e-4316-8424-8eb161248ba5">
+
+
 
 
 
@@ -20,9 +24,13 @@ drawJuliaSet call in julia Mainto any numbers between -1 and 1! the first number
 
 
 
+
+
 -0.4 + 0.6i
 
 <img width="628" alt="- 4, 6" src="https://github.com/averystraumann/generative-art/assets/101287035/98c83f1e-3353-4c4a-8b0d-b650e97d8dd7">
+
+
 
 
 
