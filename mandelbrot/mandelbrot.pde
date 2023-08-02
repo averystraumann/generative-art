@@ -1,8 +1,7 @@
-
-final int iter = 100; 
+final int iter = 512;
 final int bound = 100;
 
-  int index(int x, int y) {
+int index(int x, int y) {
     //get 2D location from 1D array    
     return x + y * width;
   }
@@ -25,21 +24,21 @@ final int bound = 100;
     return count;
   }
   
-  float[] pixel2Complex(int col, int row) { //convert pixel address to complex plane address
-    float x = (float) col/ (float) width * 5;
-    x -= (float) 2.5;
-    float y = (float) row/ (float) height * 2.5;
-    y-=1.25; //prob wrong
-    return new float[] {y,x}; 
+  float[] pixel2Complex(int col, int row, float l, float r, float b, float t) { //convert pixel address to complex plane address
+    float x = (float) col/ (float) width  * (float) (r-l);
+    x += (float) l;
+    float y = (float) row/ (float) height * (float) (t-b);
+    y += (float) b; //prob wrong
+    return new float[] {x,y}; 
   } 
   
   
-  void drawJuliaSet(float[] ab) { //<>//
+  void drawMandelbrotSet() {
     loadPixels();
     for (int j = 0; j < height; j++) { //j = row
       for (int i = 0; i< width; i++) { //i = col
-        float[] start = pixel2Complex(i,j); //get starting pt for iter for each pt on canvas
-        int count = iterate(ab, start); //iter using constants ab and computed starting pt
+        float[] ab = pixel2Complex(i,j,-1.019741354 ,-1.013877846  ,-0.325120847, -0.322189093 ); //get starting pt for iter for each pt on canvas
+        int count = iterate(ab, new float[] {0,0}); //iter using constants ab and computed starting pt
         color c = computeColor(count);
         pixels[index(i,j)] = c;
       }   
